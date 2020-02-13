@@ -585,21 +585,6 @@ class Menu
         $tabs['sql']['link'] = 'server_sql.php';
         $tabs['sql']['text'] = __('SQL');
 
-        $tabs['status']['icon'] = 's_status';
-        $tabs['status']['link'] = 'server_status.php';
-        $tabs['status']['text'] = __('Status');
-        $tabs['status']['active'] = in_array(
-            basename($GLOBALS['PMA_PHP_SELF']),
-            [
-                'server_status.php',
-                'server_status_advisor.php',
-                'server_status_monitor.php',
-                'server_status_queries.php',
-                'server_status_variables.php',
-                'server_status_processes.php',
-            ]
-        );
-
         if ($is_superuser || $isCreateOrGrantUser) {
             $tabs['rights']['icon'] = 's_rights';
             $tabs['rights']['link'] = 'server_privileges.php';
@@ -617,50 +602,6 @@ class Menu
         $tabs['export']['icon'] = 'b_export';
         $tabs['export']['link'] = 'server_export.php';
         $tabs['export']['text'] = __('Export');
-
-        $tabs['import']['icon'] = 'b_import';
-        $tabs['import']['link'] = 'server_import.php';
-        $tabs['import']['text'] = __('Import');
-
-        $tabs['settings']['icon']   = 'b_tblops';
-        $tabs['settings']['link']   = 'prefs_manage.php';
-        $tabs['settings']['text']   = __('Settings');
-        $tabs['settings']['active'] = in_array(
-            basename($GLOBALS['PMA_PHP_SELF']),
-            [
-                'prefs_forms.php',
-                'prefs_manage.php',
-                'prefs_twofactor.php',
-            ]
-        );
-
-        if (! empty($binary_logs)) {
-            $tabs['binlog']['icon'] = 's_tbl';
-            $tabs['binlog']['link'] = 'server_binlog.php';
-            $tabs['binlog']['text'] = __('Binary log');
-        }
-
-        if ($is_superuser) {
-            $tabs['replication']['icon'] = 's_replication';
-            $tabs['replication']['link'] = 'server_replication.php';
-            $tabs['replication']['text'] = __('Replication');
-        }
-
-        $tabs['vars']['icon'] = 's_vars';
-        $tabs['vars']['link'] = 'server_variables.php';
-        $tabs['vars']['text'] = __('Variables');
-
-        $tabs['charset']['icon'] = 's_asci';
-        $tabs['charset']['link'] = 'server_collations.php';
-        $tabs['charset']['text'] = __('Charsets');
-
-        $tabs['engine']['icon'] = 'b_engine';
-        $tabs['engine']['link'] = 'server_engines.php';
-        $tabs['engine']['text'] = __('Engines');
-
-        $tabs['plugins']['icon'] = 'b_plugin';
-        $tabs['plugins']['link'] = 'server_plugins.php';
-        $tabs['plugins']['text'] = __('Plugins');
 
         return $tabs;
     }
