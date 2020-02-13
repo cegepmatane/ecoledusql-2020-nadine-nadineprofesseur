@@ -37,3 +37,8 @@ $scripts->addFile('vendor/jquery/jquery.uitablefilter.js');
 $scripts->addFile('sql.js');
 
 $response->addHTML($controller->index($sqlQueryForm));
+//$response->addHTML("COUCOU AJAX");
+$boutonProfesseurVirtuel = '<form><input type="submit" value="Demander une rétroaction"></form>'; 
+$fenetreProfesseurVirtuel = '<div id="zone-professeur-virtuel"></div>';
+$response->addHTML($boutonProfesseurVirtuel);
+$response->addHTML($fenetreProfesseurVirtuel);
