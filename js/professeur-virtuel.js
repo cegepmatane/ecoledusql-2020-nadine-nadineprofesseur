@@ -5,7 +5,7 @@ function demanderRetroaction(e)
 	
 	var tableau = document.querySelector(".CodeMirror-code > div > pre > span");
 	//alert(tableau.innerHTML);
-	var sql = tableau.innerHTML.replace('<span class="cm-keyword">','').replace('<span class="cm-operator">','').replace('</span>','');
+	var sql = tableau.innerHTML.replace(/<span class="cm-keyword">/g,'').replace(/<span class="cm-operator">/g,'').replace(/<span class="cm-punctuation">/,'').replace(/<\/span>/g,'');
 	alert(sql);
 	
 	var ajax = new XMLHttpRequest();
