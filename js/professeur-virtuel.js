@@ -1,5 +1,6 @@
-function demanderRetroaction()
+function demanderRetroaction(e)
 {
+	e.preventDefault();
 	console.log('demanderRetroaction()');
 	var code = '';
 	
@@ -17,13 +18,14 @@ function demanderRetroaction()
 				zone.innerHTML = ajax.responseText;
 				zone.style.backgroundColor = 'yellow';
 				zone.style.border = 'solid 3px #4d4941';
-			}
+				alert('attente');
+}
 			//document.querySelector("#zone-professeur-virtuel")
 			
 		}
 	}
 	ajax.send(); // (2 - DEMANDE)
-	
+	return false;
 }
 
 //document.addEventListener("DOMContentLoaded", function() 
