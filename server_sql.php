@@ -41,9 +41,11 @@ $response->addHTML($controller->index($sqlQueryForm));
 
 // TODO deplacer event dans le js
 $boutonProfesseurVirtuel = '<form id="action-professeur-virtuel"><input type="submit" value="Demander une rétroaction"></form>'; 
-$fenetreProfesseurVirtuel = '<div id="zone-professeur-virtuel"></div>';
+$styleProfesseurVirtuel = '<style>#zone-professeur-virtuel{background-color:red;margin-top:10px;padding:5px;font-weight:bold;}</style>';
+$fenetreProfesseurVirtuel = '<div id="zone-professeur-virtuel">TEST</div>';
 // TODO deplacer tag script dans header
 $jsProfesseurVirtuel = '<script data-cfasync="false" type="text/javascript" src="js/professeur-virtuel.js"></script>';
 $response->addHTML($boutonProfesseurVirtuel);
 $response->addHTML($fenetreProfesseurVirtuel);
+$response->addHTML($styleProfesseurVirtuel);
 $response->addHTML($jsProfesseurVirtuel);

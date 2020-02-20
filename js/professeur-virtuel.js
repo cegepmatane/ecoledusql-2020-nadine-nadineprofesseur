@@ -11,6 +11,14 @@ function demanderRetroaction()
 		{
 			console.log('reponse recue');
 			console.log(ajax.responseText);
+			var zone = document.getElementById('zone-professeur-virtuel');
+			if(zone)
+			{
+				zone.innerHTML = ajax.responseText;
+				zone.style.backgroundColor = 'yellow';
+				zone.style.border = 'solid 3px #4d4941';
+			}
+			//document.querySelector("#zone-professeur-virtuel")
 			
 		}
 	}
