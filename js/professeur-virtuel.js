@@ -2,10 +2,14 @@ function demanderRetroaction(e)
 {
 	e.preventDefault();
 	console.log('demanderRetroaction()');
-	var code = '';
+	
+	var tableau = document.querySelector(".CodeMirror-code > div > pre > span");
+	//alert(tableau.innerHTML);
+	var sql = tableau.innerHTML.replace('<span class="cm-keyword">','').replace('<span class="cm-operator">','').replace('</span>','');
+	alert(sql);
 	
 	var ajax = new XMLHttpRequest();
-	ajax.open('GET', 'http://localhost/phpMyAdmin-dev/action/corriger-par-professeur-virtuel.php?code=' + code , true); // (2 - DEMANDE)
+	ajax.open('GET', 'http://localhost/phpMyAdmin-dev/action/corriger-par-professeur-virtuel.php?sql=' + sql , true); // (2 - DEMANDE)
 	ajax.onreadystatechange = function()
 	{
 		if(4 == ajax.readyState) // (4 - REPONSE)
