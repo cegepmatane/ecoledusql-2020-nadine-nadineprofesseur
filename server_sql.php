@@ -44,6 +44,6 @@ $boutonProfesseurVirtuel = '<form id="action-professeur-virtuel"><input type="su
 $fenetreProfesseurVirtuel = '<div id="zone-professeur-virtuel"></div>';
 // TODO deplacer tag script dans header
 $jsProfesseurVirtuel = '<script data-cfasync="false" type="text/javascript" src="js/professeur-virtuel.js"></script>';
-$response->addHTML($jsProfesseurVirtuel);
 $response->addHTML($boutonProfesseurVirtuel);
 $response->addHTML($fenetreProfesseurVirtuel);
+$response->addHTML($jsProfesseurVirtuel);
